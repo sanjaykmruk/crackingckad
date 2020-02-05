@@ -151,6 +151,11 @@ kubectl annotate pod|deploy|service|rs|rc|ds --overwrite annotation_description=
 kubectl annotate pod|deploy|service|rs|rc|ds annotation_description-  #remove the annotation
 ```
 
+### kubectl `scale` to scale deployment, ReplicaSet, Replication Controller or Stateful sets
+```
+kubectl scale deploy|rs|rc <name> --replicas=10 
+```
+
 ### kubectl `-o jsonpath` and `-o custom-columns` to print any element value of the resource
 
 `-o jsonpath`
