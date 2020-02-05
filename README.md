@@ -156,6 +156,11 @@ kubectl annotate pod|deploy|service|rs|rc|ds annotation_description-  #remove th
 kubectl scale deploy|rs|rc <name> --replicas=10 
 ```
 
+### kubectl `autoscale` to scale deployment, ReplicaSet, Replication Controller or Stateful sets
+```
+kubectl autoscale deploy|rs|rc <name> --min=2 --max=10 --cpu-percent=80
+```
+
 ### kubectl `rollout` to check the deployment update and undo it in case of issue
 ```
 kubectl rollout history deploy <name> # show rollout history
