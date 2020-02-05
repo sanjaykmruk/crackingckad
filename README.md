@@ -143,8 +143,12 @@ kubectl set resources deployment|pod <name>  --limits=cpu=200m,memory=512Mi --re
 ```
 kubectl label pod|deploy|service|rs|rc|ds --overwrite label_name=label_value
 kubectl label pod|deploy|service|rs|rc|ds label_name-  #remove the label
+```
 
-
+### kubectl `annotate`to set or change annotation of a resource
+```
+kubectl annotate pod|deploy|service|rs|rc|ds --overwrite annotation_description="can be multi line description"
+kubectl annotate pod|deploy|service|rs|rc|ds annotation_description-  #remove the annotation
 ```
 
 ### kubectl `-o jsonpath` and `-o custom-columns` to print any element value of the resource
