@@ -156,6 +156,16 @@ kubectl annotate pod|deploy|service|rs|rc|ds annotation_description-  #remove th
 kubectl scale deploy|rs|rc <name> --replicas=10 
 ```
 
+### kubectl `rollout` to check the deployment update and undo it in case of issue
+```
+kubectl rollout history deploy <name> # show rollout history
+kubectl rollout undo deploy <name> # undo the rollout to last revision
+kubectl rollout undo --to-version=<revision_number> deploy <name> # undo the rollout to given revision
+kubectl rollout history deploy <name> --revision=5  #to see the detail about the revision
+kubectl rollout pause deploy <name> # pause the rollout
+kubectl rollout resume deploy <name> # to resume a paused rollout
+```
+
 ### kubectl `-o jsonpath` and `-o custom-columns` to print any element value of the resource
 
 `-o jsonpath`
