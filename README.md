@@ -1,6 +1,6 @@
 # This repo contains the tips to crack CKAD exam
 
-## POD
+## attributes of differnet rescource to mug up
 
 ### pod.spec.containers
 ```
@@ -107,5 +107,33 @@ resources:
     memory: 100Mi
     cpu: .5
 ```
+
+## Commands to mug up
+
+### Kubectl expose to create service
+```
+kubectl expose po|svc|rc|rs|deploy <name> --port= --target-port= --name= --protocal=TCP|UDP  --labels= --type=ClusterIP|NodePort|LoadBalancer
+```
+### Kubectl set to edit attributes of a resource
+
+```
+kubectl set env po|deploy|rc|ds|job|rs --overwrite  <env_var_name>=<value>
+kubectl set env po|deploy|rc|ds|job|rs --all --list
+kubectl set env po|deploy|rc|ds|job|rs --all <env_var_name>=<value>
+kubectl set env po|deploy|rc|ds|job|rs  env_var_name-
+```
+`set image` update the image of containers in a pod, deployment,rs,rc,ds
+```
+kubectl set image po|deploy|rc|ds|rs <name> <container1_name>=<image>:<version>  <container2_name>=<image>:<version> 
+kubectl set image po|deploy|rc|ds|rs <name> *=<image>:<version>
+
+```
+
+`set resources` Specify compute resource requirements (cpu, memory) for any resource that defines a pod template
+```
+kubectl set resources deployment|pod <name>  --limits=cpu=200m,memory=512Mi --requests=cpu=100m,memory=256Mi
+```
+
+
 
 
