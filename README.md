@@ -110,6 +110,11 @@ resources:
 
 ## Commands to mug up
 
+### Running the pod on specific node 
+- pod.spec.nodeName <string> # name of the node
+- pod.spec.nodeSelector <map[string]string> # labels to select the node/nodes
+
+
 ### kubectl `expose` to create service
 ```
 kubectl expose po|svc|rc|rs|deploy <name> --port= --target-port= --name= --protocal=TCP|UDP  --labels= --type=ClusterIP|NodePort|LoadBalancer
