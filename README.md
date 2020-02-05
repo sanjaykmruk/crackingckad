@@ -135,5 +135,24 @@ kubectl set resources deployment|pod <name>  --limits=cpu=200m,memory=512Mi --re
 ```
 
 
+### kubectl `-o jsonpath` and `-o custom-columns` to print any element value of the resource
 
+`-o jsonpath`
+```
+kubectl get po -o jsonpath="{.items[*]['.metadata.name','.metadata.namespace']}"
+
+kubectl get po <pod_name> -o jsonpath="{['.metadata.name','.metadata.namespace']}"
+
+```
+
+ `-o custom-columns`
+ ```
+ kubectl get po -o custom-columns="POD_NAME:.metadata.name, POD_NS:.metadata.namespace"
+ ```
+
+
+### kubectl  `--sort-by`  to sort the display by resource attribute
+```
+kubectl get po --sort-by=".metadata.creationTimestamp"
+```
 
