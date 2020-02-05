@@ -156,3 +156,7 @@ kubectl get po <pod_name> -o jsonpath="{['.metadata.name','.metadata.namespace']
 kubectl get po --sort-by=".metadata.creationTimestamp"
 ```
 
+### Kubectl `run` to create a pod
+```
+kubectl run busybox --image=busybox --env="DNS_DOMAIN=cluster" --env="POD_NAMESPACE=default" --labels="app=boxbusy,env=prod" --restart=Never
+```
