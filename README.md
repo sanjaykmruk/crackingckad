@@ -110,11 +110,11 @@ resources:
 
 ## Commands to mug up
 
-### kubectl expose to create service
+### kubectl `expose` to create service
 ```
 kubectl expose po|svc|rc|rs|deploy <name> --port= --target-port= --name= --protocal=TCP|UDP  --labels= --type=ClusterIP|NodePort|LoadBalancer
 ```
-### kubectl set to edit attributes of a resource
+### kubectl `set` to edit attributes of a resource
 
 ```
 kubectl set env po|deploy|rc|ds|job|rs --overwrite  <env_var_name>=<value>
@@ -134,6 +134,13 @@ kubectl set image po|deploy|rc|ds|rs <name> *=<image>:<version>
 kubectl set resources deployment|pod <name>  --limits=cpu=200m,memory=512Mi --requests=cpu=100m,memory=256Mi
 ```
 
+### kubectl `label`to set or change label of a resource
+```
+kubectl label pod|deploy|service|rs|rc|ds --overwrite label_name=label_value
+kubectl label pod|deploy|service|rs|rc|ds label_name-  #remove the label
+
+
+```
 
 ### kubectl `-o jsonpath` and `-o custom-columns` to print any element value of the resource
 
