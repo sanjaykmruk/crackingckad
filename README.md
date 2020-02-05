@@ -110,11 +110,11 @@ resources:
 
 ## Commands to mug up
 
-### Kubectl expose to create service
+### kubectl expose to create service
 ```
 kubectl expose po|svc|rc|rs|deploy <name> --port= --target-port= --name= --protocal=TCP|UDP  --labels= --type=ClusterIP|NodePort|LoadBalancer
 ```
-### Kubectl set to edit attributes of a resource
+### kubectl set to edit attributes of a resource
 
 ```
 kubectl set env po|deploy|rc|ds|job|rs --overwrite  <env_var_name>=<value>
@@ -156,7 +156,16 @@ kubectl get po <pod_name> -o jsonpath="{['.metadata.name','.metadata.namespace']
 kubectl get po --sort-by=".metadata.creationTimestamp"
 ```
 
-### Kubectl `run` to create a pod
+### kubectl `run` to create a pod
 ```
 kubectl run busybox --image=busybox --env="DNS_DOMAIN=cluster" --env="POD_NAMESPACE=default" --labels="app=boxbusy,env=prod" --restart=Never
 ```
+
+### kubectl `-l` or `--selector` for filtering the list of resource based on labels
+```
+kubectl get po -l app=nginx
+kubectl get po -l app=busybox
+kubectl get po -l "app in (nginx,busybox)"
+kubectl get po -l app
+```
+
