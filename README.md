@@ -3,14 +3,20 @@
 ## attributes of differnet rescource to mug up
 
 ### pod.spec.containers
+
+#### container command and args
 ```
 command:["/bin/sh"]
 args:["-c","echo welcome"]
 ```
+
+#### container ports
 ```
 ports:
 - containerPort: $(myenv1)
 ```
+
+#### container env
 ```
 env:
 - name: myenv1
@@ -18,8 +24,8 @@ env:
 - name: myenv2
   valueFrom:
     configMapKeyRef:
-    name: cfgMapName
-    key: keyNameInCfg
+      name: cfgMapName
+      key: keyNameInCfg
 - name: myevn3
   valueFrom:
     secretKeyRef:
@@ -35,6 +41,8 @@ env:
       containerName: <name of the container>
       resource: requests.cpu | requests.memory
 ```
+
+#### container envFrom
 ```
 envFrom:
 - configMapRef
@@ -44,6 +52,8 @@ envFrom:
 ```
 
 ### pod.spec
+
+#### pod volumes
 ```
 volumes:
 - name: my-vol-1
@@ -58,11 +68,24 @@ volumes:
   secret:
     secretName: my-secret
 - name: my-vol-5
-  configMap:
+  configMap:     ## Note the diffrence between the envFrom configMapRef 
     name: mycfg
 ```
 
 ### pod.spec.containers
+
+#### containers|pod securityContext
+
+```
+securityContext:
+  runAsUser: <userId>
+  runAsGroup: <groupId>
+  fsGroup: <groupId applies to all container is pod>
+  capabilities: ## Not supported by Pod level sercurityContext
+        add: ["NET_ADMIN", "SYS_TIME"]
+```
+
+#### container volumeMounts
 ```
 volumeMounts:
 - name: my-vol-1
@@ -78,6 +101,7 @@ volumeMounts:
 ```
 
 ### pod.spec.containers
+#### container resources
 ```
 resources:
   requests:
