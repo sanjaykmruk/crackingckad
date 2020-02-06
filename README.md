@@ -161,6 +161,11 @@ resources:
 
 ## Commands to mug up
 
+### kubectl `serviceaccount` for creating a service account
+```
+kubectl create serviceaccount|sa <svc_act_name>
+```
+
 ### kubectl `secret` to create a secret
 
 ```
