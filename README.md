@@ -72,6 +72,43 @@ securityContext:
         add: ["NET_ADMIN", "SYS_TIME"]
 ```
 
+#### container livenessProbe and readinessProbe
+```
+livenessProbe:
+  initialDelaySeconds: 45
+  periodSeconds: 25
+  httpGet:
+    path: /healthz
+    port: 8080
+readinessProbe:
+  initialDelaySeconds: 20
+  periodSeconds: 20
+  httpGet:
+    path: /
+    port: 8080
+   
+--
+livenessProbe:
+  exec:
+    command: []
+readinessProbe:
+  exec:
+    command: []
+  
+  
+--
+livenessProbe:
+  tcpSocket:
+    host:
+    port:
+readinessProbe:
+  tcpSocket:
+    host:
+    port: 
+
+```
+
+
 ### pod.spec
 
 ### Running pod with a serviceaccount
