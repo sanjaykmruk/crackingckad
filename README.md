@@ -51,8 +51,18 @@ envFrom:
   name: secretName
 ```
 
-#### containers|pod securityContext
+#### container resources
+```
+resources:
+  requests:
+    cpu: .2
+    memory: 100Mi
+  limits:
+    cpu: 1
+    memory: 300Mi
+```
 
+#### containers|pod securityContext
 ```
 securityContext:
   runAsUser: <userId>
@@ -97,19 +107,6 @@ volumeMounts:
 - name: my-vol-5
   mountPath: /etc/data5
 ```
-
-### pod.spec.containers
-#### container resources
-```
-resources:
-  requests:
-    cpu: .2
-    memory: 100Mi
-  limits:
-    cpu: 1
-    memory: 300Mi
-```
-
 
 ## configmap
 
