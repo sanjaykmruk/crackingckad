@@ -92,11 +92,11 @@ resources:
 ## configmap
 
 ```
-kubectl create configmap <name> --from-literal=key=val --from-literal=key2=val2
+kubectl create configmap|cm <name> --from-literal=key=val --from-literal=key2=val2
 
-kubectl create configmap <name> --from-file=path/to/bar
+kubectl create configmap|cm <name> --from-file=path/to/bar
 
-kubectl create configmap <name> --from-env-file=cfgfile.env
+kubectl create configmap|cm <name> --from-env-file=cfgfile.env
 
 ```
 
