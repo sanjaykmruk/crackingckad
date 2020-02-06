@@ -57,6 +57,9 @@ volumes:
 - name: my-vol-4
   secret:
     secretName: my-secret
+- name: my-vol-5
+  configMap:
+    name: mycfg
 ```
 
 ### pod.spec.containers
@@ -66,6 +69,12 @@ volumeMounts:
   mountPath: /etc/data
 - name: my-vol-2
   mountPath: /etc/data2
+- name: my-vol-3
+  mountPath: /etc/data3
+- name: my-vol-4
+  mountPath: /etc/data4
+- name: my-vol-5
+  mountPath: /etc/data5
 ```
 
 ### pod.spec.containers
