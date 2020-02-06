@@ -88,6 +88,18 @@ resources:
     memory: 300Mi
 ```
 
+
+## configmap
+
+```
+kubectl create configmap <name> --from-literal=key=val --from-literal=key2=val2
+
+kubectl create configmap <name> --from-file=path/to/bar
+
+kubectl create configmap <name> --from-env-file=cfgfile.env
+
+```
+
 ## Jobs and Cronjobs
 
 ```
