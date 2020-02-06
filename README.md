@@ -191,26 +191,11 @@ kubectl create job <jobname> --image=<image>
 kubectl create cronjob <cjname> --image=<image>  --schedule="* * * * *"
 ```
 
-### kubectl `set` to edit attributes of a resource
+### kubectl `service` to create a service
+```
+kubectl create service clusterip|externalname|loadbalancer|nodeport  <servicename> --tcp=5678:8080
 
 ```
-kubectl set env po|deploy|rc|ds|job|rs --overwrite  <env_var_name>=<value>
-kubectl set env po|deploy|rc|ds|job|rs --all --list
-kubectl set env po|deploy|rc|ds|job|rs --all <env_var_name>=<value>
-kubectl set env po|deploy|rc|ds|job|rs  env_var_name-
-```
-
-`set image` update the image of containers in a pod, deployment,rs,rc,ds
-```
-kubectl set image po|deploy|rc|ds|rs <name> <container1_name>=<image>:<version>  <container2_name>=<image>:<version> 
-kubectl set image po|deploy|rc|ds|rs <name> *=<image>:<version>
-```
-
-`set resources` Specify compute resource requirements (cpu, memory) for any resource that defines a pod template
-```
-kubectl set resources deployment|pod <name>  --limits=cpu=200m,memory=512Mi --requests=cpu=100m,memory=256Mi
-```
-
 
 ### kubectl `expose` to create service
 ```
@@ -248,6 +233,27 @@ kubectl rollout history deploy <name> --revision=5  #to see the detail about the
 kubectl rollout pause deploy <name> # pause the rollout
 kubectl rollout resume deploy <name> # to resume a paused rollout
 ```
+
+### kubectl `set` to edit attributes of a resource
+
+```
+kubectl set env po|deploy|rc|ds|job|rs --overwrite  <env_var_name>=<value>
+kubectl set env po|deploy|rc|ds|job|rs --all --list
+kubectl set env po|deploy|rc|ds|job|rs --all <env_var_name>=<value>
+kubectl set env po|deploy|rc|ds|job|rs  env_var_name-
+```
+
+`set image` update the image of containers in a pod, deployment,rs,rc,ds
+```
+kubectl set image po|deploy|rc|ds|rs <name> <container1_name>=<image>:<version>  <container2_name>=<image>:<version> 
+kubectl set image po|deploy|rc|ds|rs <name> *=<image>:<version>
+```
+
+`set resources` Specify compute resource requirements (cpu, memory) for any resource that defines a pod template
+```
+kubectl set resources deployment|pod <name>  --limits=cpu=200m,memory=512Mi --requests=cpu=100m,memory=256Mi
+```
+
 
 ### kubectl `-o jsonpath` and `-o custom-columns` to print any element value of the resource
 
