@@ -74,6 +74,12 @@ securityContext:
 
 ### pod.spec
 
+### Running pod with a serviceaccount
+```
+spec:
+  serviceAccountName: <name_of_svc_act>
+```
+
 ### Running the pod on specific node using nodeSelector
 
 ```
