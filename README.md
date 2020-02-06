@@ -79,6 +79,26 @@ resources:
     memory: 300Mi
 ```
 
+## Jobs and Cronjobs
+
+```
+kubectl create job <jobname> --image=<image>
+
+kubectl create cronjob <cjname> --image=<image>  --schedule="* * * * *"
+```
+
+### run `x` number of same job
+### job.spec
+```
+completions: x
+```
+
+### run `y` number of same job in parallel
+### job.spec
+```
+parallelism: y
+```
+
 ## PersistentVolume
 
 ### persistentVolume.spec
