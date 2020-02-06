@@ -117,24 +117,6 @@ volumeMounts:
   mountPath: /etc/data5
 ```
 
-## configmap
-
-```
-kubectl create configmap|cm <name> --from-literal=key=val --from-literal=key2=val2
-
-kubectl create configmap|cm <name> --from-file=path/to/bar
-
-kubectl create configmap|cm <name> --from-env-file=cfgfile.env
-
-```
-
-## Jobs and Cronjobs
-
-```
-kubectl create job <jobname> --image=<image>
-
-kubectl create cronjob <cjname> --image=<image>  --schedule="* * * * *"
-```
 
 ### run `x` number of same job
 ### job.spec
@@ -179,6 +161,30 @@ resources:
 
 ## Commands to mug up
 
+### kubectl `secret` to create a secret
+
+```
+kubectl create secret generic <secret_name> --from-literal=user=username --from-literal=pwd=secretpassword
+````
+
+### kubectl `configmap` to create a configmap
+
+```
+kubectl create configmap|cm <name> --from-literal=key=val --from-literal=key2=val2
+
+kubectl create configmap|cm <name> --from-file=path/to/bar
+
+kubectl create configmap|cm <name> --from-env-file=cfgfile.env
+
+```
+
+### kubectl `job` and `cronjob` to create job and cronjob
+
+```
+kubectl create job <jobname> --image=<image>
+
+kubectl create cronjob <cjname> --image=<image>  --schedule="* * * * *"
+```
 
 ### kubectl `expose` to create service
 ```
@@ -221,7 +227,7 @@ kubectl annotate pod|deploy|service|rs|rc|ds annotation_description-  #remove th
 kubectl scale deploy|rs|rc <name> --replicas=10 
 ```
 
-### kubectl `autoscale` to scale deployment, ReplicaSet, Replication Controller or Stateful sets
+### kubectl `autoscale` to scale deployment, ReplicaSet, Replication Controller or Stateful sets and create hpa
 ```
 kubectl autoscale deploy|rs|rc <name> --min=2 --max=10 --cpu-percent=80
 ```
