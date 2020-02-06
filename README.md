@@ -74,6 +74,15 @@ securityContext:
 
 ### pod.spec
 
+### Running the pod on specific node using nodeSelector
+
+```
+spec:
+ nodeName: <string> # name of the node
+ nodeSelector:   <map[string]string> # labels to select the node/nodes
+    key=value
+```
+
 #### pod volumes
 ```
 volumes:
@@ -169,10 +178,6 @@ resources:
 ```
 
 ## Commands to mug up
-
-### Running the pod on specific node 
-- pod.spec.nodeName <string> # name of the node
-- pod.spec.nodeSelector <map[string]string> # labels to select the node/nodes
 
 
 ### kubectl `expose` to create service
