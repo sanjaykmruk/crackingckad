@@ -51,6 +51,17 @@ envFrom:
   name: secretName
 ```
 
+#### containers|pod securityContext
+
+```
+securityContext:
+  runAsUser: <userId>
+  runAsGroup: <groupId>
+  fsGroup: <groupId applies to all container is pod>
+  capabilities: ## Not supported by Pod level sercurityContext
+        add: ["NET_ADMIN", "SYS_TIME"]
+```
+
 ### pod.spec
 
 #### pod volumes
@@ -70,19 +81,6 @@ volumes:
 - name: my-vol-5
   configMap:     ## Note the diffrence between the envFrom configMapRef 
     name: mycfg
-```
-
-### pod.spec.containers
-
-#### containers|pod securityContext
-
-```
-securityContext:
-  runAsUser: <userId>
-  runAsGroup: <groupId>
-  fsGroup: <groupId applies to all container is pod>
-  capabilities: ## Not supported by Pod level sercurityContext
-        add: ["NET_ADMIN", "SYS_TIME"]
 ```
 
 #### container volumeMounts
