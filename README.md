@@ -194,12 +194,9 @@ storageClassName: myStorageClassName
 accessModes:
 - ReadWriteOne | ReadWriteMany | ReadOnlyMany
 resources:
-  limits:
-    memory: 300Mi
-    cpu: 1
   requests:
-    memory: 100Mi
-    cpu: .5
+    storage: 3Gi
+
 ```
 
 ## Commands to mug up
