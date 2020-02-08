@@ -244,8 +244,10 @@ kubectl expose po|svc|rc|rs|deploy <name> --port= --target-port= --name= --proto
 
 ### kubectl `label`to set or change label of a resource
 ```
-kubectl label pod|deploy|service|rs|rc|ds --overwrite label_name=label_value
-kubectl label pod|deploy|service|rs|rc|ds label_name-  #remove the label
+kubectl label pod|deploy|service|rs|rc|ds <resource_name> --overwrite label_name=label_value
+kubectl label pod|deploy|service|rs|rc|ds <resource_name> label_name-  #remove the label of the resource
+kubectl label pod|deploy|service|rs|rc|ds --all label_name=label_value  # add label to all pods
+kubectl label pod|deploy|service|rs|rc|ds --all label_name-  # remove label of all podd
 ```
 
 ### kubectl `annotate`to set or change annotation of a resource
@@ -277,7 +279,7 @@ kubectl rollout resume deploy <name> # to resume a paused rollout
 ### kubectl `set` to edit attributes of a resource
 
 ```
-kubectl set env po|deploy|rc|ds|job|rs --overwrite  <env_var_name>=<value>
+kubectl set env po|deploy|rc|ds|job|rs < name>  --overwrite  <env_var_name>=<value>
 kubectl set env po|deploy|rc|ds|job|rs --all --list
 kubectl set env po|deploy|rc|ds|job|rs --all <env_var_name>=<value>
 kubectl set env po|deploy|rc|ds|job|rs  env_var_name-
