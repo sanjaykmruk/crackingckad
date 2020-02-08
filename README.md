@@ -160,6 +160,16 @@ volumeMounts:
   mountPath: /etc/data5
 ```
 
+#### service
+service.spec
+```
+ports:
+- name:
+  port:
+  targetPort:
+  nodePort:
+```
+
 
 ### run `x` number of same job
 ### job.spec
