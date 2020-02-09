@@ -280,7 +280,7 @@ kubectl autoscale deploy|rs|rc <name> --min=2 --max=10 --cpu-percent=80
 ```
 kubectl rollout history deploy <name> # show rollout history
 kubectl rollout undo deploy <name> # undo the rollout to last revision
-kubectl rollout undo --to-version=<revision_number> deploy <name> # undo the rollout to given revision
+kubectl rollout undo --to-revision=<revision_number> deploy <name> # undo the rollout to given revision
 kubectl rollout history deploy <name> --revision=5  #to see the detail about the revision
 kubectl rollout pause deploy <name> # pause the rollout
 kubectl rollout resume deploy <name> # to resume a paused rollout
