@@ -218,6 +218,22 @@ resources:
 
 ```
 
+## ResourceQuota for a namespace
+
+#### resource quota are allocated to a namespace
+
+```
+resourceQuota.spec
+
+hard:
+  pods: 5
+  limits.cpu: 
+  limits.memory: 
+  requests.cpu: 
+  requests.memory: 
+
+```
+
 ## Commands to mug up
 
 ### kubectl `serviceaccount` for creating a service account
