@@ -1,5 +1,14 @@
 # This repo contains the tips to crack CKAD exam
 
+## Create alias for frequent command
+```
+alias k=kubectl
+
+alias ke='kubectl explain`
+alias kc='kubectl create`
+alias kr='kubectl run'
+```
+
 ## attributes of differnet rescource to mug up
 
 ### pod.spec.containers
