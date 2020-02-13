@@ -7,6 +7,8 @@ alias k=kubectl
 alias ke='kubectl explain`
 alias kc='kubectl create`
 alias kr='kubectl run'
+alias kn="kubectl config set-context --current --namespace "
+
 ```
 
 ## attributes of differnet rescource to mug up
