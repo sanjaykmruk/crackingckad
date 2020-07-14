@@ -8,7 +8,36 @@ alias ke='kubectl explain`
 alias kc='kubectl create`
 alias kr='kubectl run'
 alias kn="kubectl config set-context --current --namespace "
+export do="--dry-run=client -o yaml"
 
+```
+
+## Update `.vimrc`
+```bash
+set tabstop 2
+set shiftwidth 2
+set expandtab
+set softtabstop 2
+```
+
+## Know the handy `tr`, `jq`  and `sort`
+- tr - is used to text replacement on the input file
+
+```bash
+tr ' ' '\n' # replaces space with newline
+tr -d ' '   # delete space 
+```
+
+- jq - is used to perform json queries on the input files
+
+```bash
+kc get pods -o json | jq ".id" # print the value of id
+```
+
+- sort - is used to perform sorting based on column
+
+```bash
+kc get nodes | sort -k 1 -r   # will sort the output based on node names
 ```
 
 ## attributes of differnet rescource to mug up
